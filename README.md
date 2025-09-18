@@ -50,12 +50,6 @@ This will spin up a Postgres container and create the tasks table using queries/
 
 `python setup.py`
 
-#### 6️⃣ Run Database Setup
-
-This will spin up a Postgres container and create the tasks table using queries/create_table.sql.
-
-`python setup.py`
-
 You should see:
 
 Starting PostgreSQL container...
