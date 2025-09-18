@@ -3,6 +3,8 @@ import time
 import psycopg2
 from config import DB_CONFIG, CONTAINER_NAME, POSTGRES_IMAGE
 
+"""This file will setup the configuration for the Postgres database using Docker."""
+
 print("Starting PostgreSQL container...")
 subprocess.run([
     "docker", "run", "-d",

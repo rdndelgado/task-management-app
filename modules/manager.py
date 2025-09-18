@@ -11,11 +11,10 @@ class TaskManager:
 
     @staticmethod
     def add_task(task: Task):
-        """Insert a new task into the database using SQL script"""
+        """Insert a new row in the task table using SQL script"""
         conn = psycopg2.connect(**DB_CONFIG)
         cur = conn.cursor()
 
-        # Load insert query from SQL file
         with open("queries/insert_task.sql", "r") as f:
             insert_sql = f.read()
 
@@ -41,6 +40,7 @@ class TaskManager:
         status: Optional[Status] = None,
         due_before: Optional[datetime] = None,
     ) -> List[Task]:
+        """Retrieve all rows in the task table using SQL script"""
         conn = psycopg2.connect(**DB_CONFIG)
         cur = conn.cursor()
 
@@ -109,7 +109,7 @@ class TaskManager:
         conn.commit()
         cur.close()
         conn.close()
-        print(f"✅ Task {task.task_id} updated successfully")
+        print(f"Task {task.task_id} updated successfully")
 
     @staticmethod
     def complete_task(task_id: str) -> bool:
@@ -128,14 +128,15 @@ class TaskManager:
         conn.close()
 
         if updated_rows > 0:
-            print(f"✅ Task {task_id} marked as Completed")
+            print(f"Task {task_id} marked as Completed")
             return True
         else:
-            print(f"⚠️ Task {task_id} not found")
+            print(f"Task {task_id} not found")
             return False
 
     @staticmethod
     def delete_task(task_id: str) -> bool:
+        
         """Delete a task from the database by ID"""
         conn = psycopg2.connect(**DB_CONFIG)
         cur = conn.cursor()
@@ -144,15 +145,15 @@ class TaskManager:
             delete_sql = f.read()
 
         cur.execute(delete_sql, (task_id,))
-        deleted_rows = cur.rowcount  # number of rows removed
+        deleted_rows = cur.rowcount
 
         conn.commit()
         cur.close()
         conn.close()
 
         if deleted_rows > 0:
-            print(f"🗑️ Task {task_id} deleted successfully")
+            print(f"Task {task_id} deleted successfully")
             return True
         else:
-            print(f"⚠️ Task {task_id} not found")
+            print(f"Task {task_id} not found")
             return False

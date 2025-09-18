@@ -5,7 +5,7 @@ from modules.task import Task
 from modules.manager import TaskManager
 
 def show_menu():
-    print("\n===== Task Manager CLI =====")
+    print("\n===== Task Management Application =====")
     print("1. Add Task")
     print("2. List Tasks")
     print("3. Update Task")
