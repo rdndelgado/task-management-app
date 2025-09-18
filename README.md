@@ -10,8 +10,8 @@ Linux / macOS:
 - `source venv/bin/activate`
 
 Windows (PowerShell):
-`python -m venv venv`
-`venv\Scripts\activate`
+- `python -m venv venv`
+- `venv\Scripts\activate`
 
 #### 3️⃣ Install Requirements
 
@@ -41,8 +41,8 @@ If you don’t have Docker installed, download it here:
 
 Make sure it works:
 
-`docker --version`
-`docker compose version`
+- `docker --version`
+- `docker compose version`
 
 #### 6️⃣ Run Database Setup
 
@@ -75,5 +75,5 @@ Task Manager
 6. Exit
 
 #### 8️⃣ Stop the Database (when finished)
-`docker stop taskmanager_postgres`
-`docker rm taskmanager_postgres`
+- `docker stop taskmanager_postgres`
+- `docker rm taskmanager_postgres`
