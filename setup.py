@@ -14,7 +14,7 @@ subprocess.run([
     POSTGRES_IMAGE
 ])
 
-print("Waiting for Postgres to initialize...")
+print("Initializing Postgres...")
 time.sleep(5)
 
 print("Connecting to Postgres...")
