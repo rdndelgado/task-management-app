@@ -28,11 +28,11 @@ Install dependencies:
 
 In the project root, create .env with the following variables:
 
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=taskdb-mm
-POSTGRES_DB=taskmanagerdb
-POSTGRES_PORT=5432
-CONTAINER_NAME=taskmanager_postgres
+- POSTGRES_USER=postgres
+- POSTGRES_PASSWORD=taskdb-mm
+- POSTGRES_DB=taskmanagerdb
+- POSTGRES_PORT=5432
+- CONTAINER_NAME=taskmanager_postgres
 
 #### 5️⃣ Install Docker
 
